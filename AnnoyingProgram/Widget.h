@@ -14,6 +14,7 @@ public:
 	bool add_to_window(WindowManager* window);
 	bool add_to_parent(Widget* parent);
 	bool remove_from_parent();
+	WindowManager* get_window_manager() const;
 	sf::Transform local_transform = sf::Transform::Identity;
 protected:
 	virtual void draw(sf::RenderWindow* window) {}

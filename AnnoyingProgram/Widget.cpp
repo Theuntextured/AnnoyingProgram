@@ -60,6 +60,15 @@ bool Widget::remove_from_parent()
 	return true;
 }
 
+WindowManager* Widget::get_window_manager() const
+{
+	if(window_) return window_;
+
+	if(parent_) return parent_->get_window_manager();
+
+	return nullptr;
+}
+
 sf::Transform Widget::get_transform()
 {
 	if(window_)
@@ -91,7 +100,7 @@ void Widget::draw_internal(sf::RenderWindow* window)
 {
 	draw(window);
 	for(const auto i : children_)
-		draw_internal(window);
+		i->draw_internal(window);
 }
 
 long long Widget::recalculate_child_id()

@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "CommonLib.h"
 #include "Widget.h"
+#include "Timeline.h"
 
 class Button : public Widget
 {
@@ -17,7 +18,7 @@ public:
 	Delegate on_pressed;
 	Delegate on_released;
 	Delegate on_hover_start;
-	Delegate on_hover;
+	Delegate on_hovering;
 	Delegate on_hover_end;
 	
 private:
