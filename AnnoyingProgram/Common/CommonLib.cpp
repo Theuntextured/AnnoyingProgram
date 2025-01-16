@@ -1,5 +1,8 @@
 ﻿#include "CommonLib.h"
 
+#include <windows.h>
+
+
 std::set<GenericObject*> GenericObject::valid_objects = std::set<GenericObject*>();
 
 GenericObject::GenericObject()
@@ -18,36 +21,6 @@ bool is_valid_object(GenericObject* const object)
     return GenericObject::valid_objects.find(object) != GenericObject::valid_objects.end();
 }
 
-Delegate::Delegate(GenericObject* object, void(GenericObject::* delegate_function)())
-{
-    object_ = object;
-    delegate_function_ = delegate_function;
-}
-
-Delegate::Delegate(void(* delegate_function)())
-{
-    global_func_ = delegate_function;
-}
-
-Delegate& Delegate::operator=(void(* delegate_function)())
-{
-    global_func_ = delegate_function;
-    return *this;
-}
-
-void Delegate::call() const
-{
-    if(is_valid_object(object_) && delegate_function_)
-        (object_->*delegate_function_)();
-    else if(global_func_)
-        (*global_func_)();
-}
-
-void Delegate::operator()() const
-{
-    call();
-}
-
 sf::Transform lerp(const sf::Transform& start, const sf::Transform& end, const float t)
 {
     sf::Transform result;
@@ -59,4 +32,28 @@ sf::Transform lerp(const sf::Transform& start, const sf::Transform& end, const f
         c[i] = std::lerp(a[i], b[i], t);
     
     return result;
+}
+
+sf::Color lerp(const sf::Color& start, const sf::Color& end, const float t)
+{
+    return sf::Color(lerp(start.r, end.r, t), lerp(start.g, end.g, t), lerp(start.b, end.b, t), lerp(start.a, end.a, t));
+}
+
+sf::Color rand_color(const bool random_alpha)
+{
+    return {
+        static_cast<sf::Uint8>(rand() % 255),
+        static_cast<sf::Uint8>(rand() % 255),
+        static_cast<sf::Uint8>(rand() % 255),
+        random_alpha ? static_cast<sf::Uint8>(rand() % 255) : static_cast<sf::Uint8>(255)
+    };
+}
+
+int get_task_bar_height()
+{
+    RECT rect;
+    HWND taskBar = FindWindow(L"Shell_traywnd", NULL);
+    if(taskBar && GetWindowRect(taskBar, &rect)) {
+        return rect.bottom - rect.top;
+    }
 }

@@ -37,7 +37,7 @@ template <typename T>
 class Timeline : Tickable
 {
 public:
-    explicit Timeline(const std::vector<TimelinePoint<T>> points, bool destroy_on_finish = true)
+    explicit Timeline(GenericObject* owner, const std::vector<TimelinePoint<T>> points, bool destroy_on_finish = true)
     {
         if(points.empty()) return;
         this->points_ = points;
@@ -45,6 +45,7 @@ public:
         max_time_ = points_.back().time;
         min_time_ = points_.front().time;
         destroy_on_finish_ = destroy_on_finish;
+        owner_ = owner;
     }
 
     void bind_property(T& property)
@@ -54,6 +55,11 @@ public:
     
     void tick(const double delta_time) override
     {
+        if(!is_valid_object(owner_))
+        {
+            mark_for_deletion();
+            return;
+        }
         bool finish = false;
         if(points_.empty()) return;
         switch (play_type_)
@@ -129,7 +135,7 @@ public:
         {
             if(current_time_ <= points_[i].time && current_time_ >= points_[i - 1].time)
             {
-                const float lerp_factor = (current_time_ - points_[i - 1].time) / (points_[i].time - points_[i - 1].time);
+                const float lerp_factor = static_cast<float>((current_time_ - points_[i - 1].time) / (points_[i].time - points_[i - 1].time));
                 return lerp(points_[i - 1].data, points_[i].data, lerp_factor);
             }
         }
@@ -148,6 +154,7 @@ private:
     double min_time_ = 0.0;
     T* bound_property_ = nullptr;
     bool destroy_on_finish_ = false;
+    GenericObject* owner_ = nullptr;
 };
 
 

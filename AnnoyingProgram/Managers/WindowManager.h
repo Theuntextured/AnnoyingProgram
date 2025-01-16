@@ -11,11 +11,12 @@ public:
 	void tick(const double delta_time) override;
 
 	void handle_events();
-	
+
+	bool can_close = true;
 	std::vector<Widget*> widgets;
 	sf::Color background_color = sf::Color::Black;
 	sf::Thread* input_handling_thread;
 	std::atomic<bool> is_processing_input = false;
 
-	Delegate on_closed;
+	Delegate on_request_close;
 };

@@ -6,3 +6,4 @@
 #include "../Timings/Timeline.h"
 #include "../Timings/Timer.h"
 #include "../Managers/Event.h"
+#include "../Managers/AntiTaskbar.h"

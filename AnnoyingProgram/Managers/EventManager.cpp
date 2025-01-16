@@ -6,22 +6,23 @@
 #define REGISTER_EVENT(event_class) events.push_back(new event_class());
 
 #include EVENT_DIR(FirstEvent)
+#include EVENT_DIR(SecondEvent)
+#include EVENT_DIR(ThirdEvent)
 
 EventManager::EventManager()
 {
+    REGISTER_EVENT(FirstEvent);
+    REGISTER_EVENT(SecondEvent);
+    REGISTER_EVENT(ThirdEvent);
     
-REGISTER_EVENT(FirstEvent);
-
 
     if (!events.empty())
-        events.back()->start_internal();
+        events.front()->start_internal();
 }
-
-#undef EVENT_DIR
-#undef REGISTER_EVENT
 
 EventManager::~EventManager()
 {
+    
     for(const auto e : events)
         e->end();
 }
@@ -38,7 +39,7 @@ void EventManager::tick(const double delta_time)
     if(should_stop)
         return;
 
-    get_current_event()->tick();
+    get_current_event()->tick(delta_time);
 }
 
 void EventManager::cycle_event()

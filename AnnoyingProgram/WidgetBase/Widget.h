@@ -4,14 +4,14 @@
 
 class WindowManager;
 
-class Widget : Tickable
+class Widget : public Tickable
 {
 	friend class WindowManager;
 public:
 	Widget();
 	~Widget();
 	
-	bool add_to_window(WindowManager* window);
+	bool add_to_parent(WindowManager* window);
 	bool add_to_parent(Widget* parent);
 	bool remove_from_parent();
 	WindowManager* get_window_manager() const;
@@ -34,3 +34,8 @@ private:
 	long long child_id_ = INDEX_INVALID;
 };
 
+template <typename T>
+void centre_drawable(T* drawable)
+{
+	drawable->setOrigin(drawable->getLocalBounds().width / 2, drawable->getLocalBounds().height / 2);
+}

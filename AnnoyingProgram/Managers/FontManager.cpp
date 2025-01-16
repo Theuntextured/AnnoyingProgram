@@ -23,5 +23,5 @@ const sf::Font& FontManager::get_font_by_name(const sf::String& name, bool fallb
 
 const sf::Font& FontManager::get_fallback_font()
 {
-    return FontManager::get_font_by_name("Arial", false);
+    return get_font_by_name("Arial", false);
 }

@@ -11,7 +11,7 @@ Widget::~Widget()
 		delete c;
 }
 
-bool Widget::add_to_window(WindowManager* window)
+bool Widget::add_to_parent(WindowManager* window)
 {
 	CHECK_RET_FALSE(is_valid_object(window), "Tried adding a widget to an invalid window.")
 	CHECK_RET_FALSE(!parent_ && !window_, "Tried adding a widget to a window, but it has already been added to a parent.")

@@ -10,7 +10,8 @@ struct PhaseProperties
                     const sf::Uint8 window_style,
                     const sf::VideoMode& video_mode,
                     const sf::String& title,
-                    const double time_until_next_phase);
+                    const double time_until_next_phase,
+                    const Delegate& delegate = Delegate());
     
     sf::String text;
     sf::Color text_color;
@@ -20,6 +21,8 @@ struct PhaseProperties
     sf::Uint8 window_style;
     sf::VideoMode video_mode;
     sf::String title;
+
+    Delegate delegate;
     
     double time_until_next;
 };
@@ -28,7 +31,6 @@ class FirstEvent : public Event
 {
     public: void start() override;
     void end() override;
-    void tick() override;
 
     void next_phase();
     void on_window_closed();

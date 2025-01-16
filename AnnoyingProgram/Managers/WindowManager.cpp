@@ -23,7 +23,6 @@ void WindowManager::tick(const double delta_time)
     display();
 }
 
-#define INPUT_LIMIT_PER_TICK 10
 
 void WindowManager::handle_events()
 {
@@ -32,8 +31,9 @@ void WindowManager::handle_events()
     {
         if (event.type == sf::Event::Closed)
         {
-            close();
-            on_closed();
+            if(can_close)
+                close();
+            on_request_close();
         }
     }
 }

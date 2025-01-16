@@ -14,7 +14,7 @@ public:
     virtual void start() {}
     void operator()() { start_internal(); }
     virtual void end() {}
-    virtual void tick() {}
+    virtual void tick(const double delta_time) {}
 protected:
     void start_internal()
     {

@@ -1,9 +1,10 @@
 ﻿#include "FirstEvent.h"
 
+#define DO_DELAY
 
 PhaseProperties::PhaseProperties(const sf::String& text, const sf::Color& text_color, const sf::String& font_name,
     const unsigned int text_size, const sf::Uint8 window_style, const sf::VideoMode& video_mode,
-    const sf::String& title, const double time_until_next_phase)
+    const sf::String& title, const double time_until_next_phase, const Delegate& delegate)
 {
     this->text = text;
     this->text_color = text_color;
@@ -13,21 +14,32 @@ PhaseProperties::PhaseProperties(const sf::String& text, const sf::Color& text_c
     this->video_mode = video_mode;
     this->time_until_next = time_until_next_phase;
     this->title = title;
+    this->delegate = delegate;
 }
 
 void FirstEvent::start()
 {
+    phases = {
+        PhaseProperties("Hello! :)", sf::Color::White, "HARLOWSI", 24, sf::Style::Close, sf::VideoMode(200, 50), "Hello", 3.),
+        PhaseProperties("Well... Hello?", sf::Color::White, "HARLOWSI", 24, sf::Style::Close, sf::VideoMode(200, 50), "Hello", 3.),
+        PhaseProperties("I really like you :)", sf::Color::White, "LHANDW", 24, sf::Style::Close, sf::VideoMode(400, 50), "Hey there", .5),
+        PhaseProperties("I do...", sf::Color::White, "LHANDW", 24, sf::Style::Close, sf::VideoMode(100, 50), "Hey there", 1.),
+        PhaseProperties("Why do you keep sending me away?", sf::Color::White, "LHANDW", 24, sf::Style::Close, sf::VideoMode(600, 50), "Hey there", .5),
+        PhaseProperties("Hey!", sf::Color::White, "COOPBL", 24, sf::Style::Close, sf::VideoMode(100, 50), ">:(", 3.),
+        PhaseProperties("Stop!", sf::Color::White, "COOPBL", 24, sf::Style::Close, sf::VideoMode(100, 50), ">:(", 1.),
+        PhaseProperties("Stop!", sf::Color::Red, "COOPBL", 72, sf::Style::Close, sf::VideoMode(300, 150), ">:(", 3.),
+        PhaseProperties("Alright...", sf::Color::White, "COOPBL", 12, sf::Style::Close, sf::VideoMode(100, 50), ">:(", 1.),
+        PhaseProperties("Close me now....", sf::Color::White, "Arial", 24, sf::Style::Titlebar, sf::VideoMode(300, 50), ">:(", 5.), 
+        PhaseProperties("Oh...", sf::Color::White, "Arial", 24, sf::Style::Close, sf::VideoMode(50, 50), ":o", 1.),
+        PhaseProperties("Well... Since you like closing windows so much...", sf::Color::Cyan, "Arial", 24, sf::Style::Close, sf::VideoMode(600, 50), ">:)", 5)
+    };
     
+    next_phase();
 }
 
 void FirstEvent::end()
 {
-
-}
-
-void FirstEvent::tick()
-{
-
+    window_manager->mark_for_deletion();
 }
 
 void FirstEvent::next_phase()
@@ -51,27 +63,37 @@ void FirstEvent::next_phase()
     if(!window_manager)
     {
         window_manager = new WindowManager(phase.video_mode, phase.title, phase.window_style);
-       // window_manager->on_closed = Delegate(this, &FirstEvent::on_window_closed);
+        window_manager->on_request_close.bind(this, &FirstEvent::on_window_closed);
     }
     else
     {
+        for(const auto w : window_manager->widgets)
+        {
+            w->mark_for_deletion();
+            w->remove_from_parent();
+        }
         window_manager->create(phase.video_mode, phase.title, phase.window_style);
     }
     
-    text->add_to_window(window_manager);
+    text->add_to_parent(window_manager);
     
 
     sf::Transform target_transform = sf::Transform::Identity;
-    target_transform.translate(window_manager->getSize().x / 2, window_manager->getSize().y / 2);
+    target_transform.translate(static_cast<sf::Vector2f>(window_manager->getSize()) / 2.f);
 
     sf::Transform original_transform = target_transform;
     original_transform.scale(0.0,0.0);
 
-    auto tl = new TransformTimeline({{0., original_transform}, {2., target_transform}});
+    auto tl = new TransformTimeline(this, {{0., original_transform}, {2., target_transform}});
     tl->bind_property(text->local_transform);
     tl->play();
 }
 
 void FirstEvent::on_window_closed()
 {
+#ifdef DO_DELAY
+    Timer::create_timer_by_function(this, &FirstEvent::next_phase, phases[current_phase].time_until_next);
+#else
+    next_phase();
+#endif
 }
