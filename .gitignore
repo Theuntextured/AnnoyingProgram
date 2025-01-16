@@ -36,3 +36,6 @@ riderModule.iml
 *.exe
 *.out
 *.app
+
+/x64/
+/AnnoyingProgram/x64/
