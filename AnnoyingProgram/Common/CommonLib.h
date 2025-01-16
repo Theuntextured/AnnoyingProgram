@@ -11,6 +11,7 @@
 
 #define INDEX_INVALID (-1)
 #define FORCEINLINE __forceinline
+#define MAX_FPS 60
 
 template <typename T>
 bool vector_contains(std::vector<T>& vec, T element)

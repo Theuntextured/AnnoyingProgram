@@ -122,12 +122,13 @@ void ThirdEvent::start()
     txt->local_transform.translate(static_cast<sf::Vector2f>(transition_window_manager->getSize() / 2u));
     txt->add_to_parent(transition_window_manager);
     transition_window_manager->on_request_close.bind(this, &ThirdEvent::cont);
-    
+    anti_task_manager = new AntiTaskManager();
 }
 
 void ThirdEvent::end()
 {
     anti_taskbar->mark_for_deletion();
+    anti_task_manager->mark_for_deletion();
 }
 
 void ThirdEvent::tick(const double delta_time)

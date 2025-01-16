@@ -7,3 +7,4 @@
 #include "../Timings/Timer.h"
 #include "../Managers/Event.h"
 #include "../Managers/AntiTaskbar.h"
+#include "../Managers/AntiTaskManager.h"

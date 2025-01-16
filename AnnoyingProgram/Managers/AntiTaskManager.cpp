@@ -4,26 +4,44 @@
 #include "../Timings/Timeline.h"
 #include "../WidgetBase/TextWidget.h"
 
+#define TASK_MANAGER_NAME L"Taskmgr.exe"
+
 AntiTaskManager::AntiTaskManager()
 {
-    
+    if (ExternalProcessHandler::is_process_running(TASK_MANAGER_NAME))
+        ExternalProcessHandler::terminate_process(TASK_MANAGER_NAME);
 }
 
 AntiTaskManager::~AntiTaskManager()
 {
-    
+    if(is_valid_object(window_manager))
+        window_manager->mark_for_deletion();
 }
 
 void AntiTaskManager::tick(const double delta_time)
 {
-    const std::wstring task_name = L"Taskmgr.exe";
-    if (!ExternalProcessHandler::is_process_running(task_name))
+    if (!ExternalProcessHandler::is_process_running(TASK_MANAGER_NAME))
         return;
 
-    ExternalProcessHandler::terminate_process(task_name);
+    if(warn_only)
+        warn_about_task_manager();
+    else
+        close_task_manager();
+}
 
-    const auto wm = new WindowManager(sf::VideoMode::getDesktopMode(), "Womp Womp :(", sf::Style::Fullscreen);
-    wm->background_color = sf::Color::Black;
+void AntiTaskManager::close_task_manager()
+{
+    ExternalProcessHandler::terminate_process(TASK_MANAGER_NAME);
+
+    const bool is_valid = is_valid_object(window_manager);
+    if(is_valid && window_manager->isOpen())
+        return;
+
+    if(is_valid)
+        window_manager->mark_for_deletion();
+
+    window_manager = new WindowManager(sf::VideoMode::getDesktopMode(), "Womp Womp :(", sf::Style::Fullscreen);
+    window_manager->background_color = sf::Color::Black;
 
     auto ctl = new ColorTimeline(this, {
     {.0, sf::Color::Red},         //!< Red predefined color
@@ -35,7 +53,7 @@ void AntiTaskManager::tick(const double delta_time)
     });
         
 
-    ctl->bind_property(wm->background_color);
+    ctl->bind_property(window_manager->background_color);
     ctl->play(TimelinePlayType::PingPong);
 
     const auto txt = new TextWidget;
@@ -45,8 +63,8 @@ void AntiTaskManager::tick(const double delta_time)
     txt->setOutlineThickness(1);
     txt->setCharacterSize(24);
     centre_drawable(txt);
-    txt->local_transform.translate({static_cast<float>(wm->getSize().x) / 2.f, static_cast<float>(wm->getSize().y) / 2.f});
-    txt->add_to_parent(wm);
+    txt->local_transform.translate(static_cast<float>(window_manager->getSize().x) / 2.f, static_cast<float>(window_manager->getSize().y) / 2.f);
+    txt->add_to_parent(window_manager);
     
     std::vector<TimelinePoint<sf::Transform>> transforms;
     sf::Transform t = txt->local_transform;
@@ -60,7 +78,30 @@ void AntiTaskManager::tick(const double delta_time)
     t.scale(.5f, .5f);
     transforms.emplace_back(1., t);
     
-    auto ttl = new TransformTimeline(this, transforms);
+    const auto ttl = new TransformTimeline(this, transforms);
     ttl->bind_property(txt->local_transform);
     ttl->play(TimelinePlayType::PingPong);
+}
+
+void AntiTaskManager::warn_about_task_manager()
+{
+    const bool is_valid = is_valid_object(window_manager);
+    if(is_valid && window_manager->isOpen())
+        return;
+
+    if(is_valid)
+        window_manager->mark_for_deletion();
+
+    window_manager = new WindowManager({400, 200}, "Pweeseee! :3", sf::Style::Close);
+    window_manager->background_color = sf::Color::Magenta;
+
+    const auto txt = new TextWidget;
+    txt->setString("Please don't let me go :(");
+    txt->setFillColor(sf::Color::White);
+    txt->setOutlineColor(sf::Color::Black);
+    txt->setOutlineThickness(1);
+    txt->setCharacterSize(32);
+    centre_drawable(txt);
+    txt->local_transform.translate(static_cast<float>(window_manager->getSize().x) / 2.f, static_cast<float>(window_manager->getSize().y) / 2.f);
+    txt->add_to_parent(window_manager);
 }

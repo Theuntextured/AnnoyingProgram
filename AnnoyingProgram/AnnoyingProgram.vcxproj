@@ -111,10 +111,13 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(_ZVcpkgCurrentInstalledDir)include;$(SolutionDir)SFML\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(_ZVcpkgCurrentInstalledDir)$(_ZVcpkgConfigSubdir)lib;$(_ZVcpkgCurrentInstalledDir)$(_ZVcpkgConfigSubdir)lib\manual-link;$(SolutionDir)SFML\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(CoreLibraryDependencies);%(AdditionalDependencies);sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -165,6 +168,7 @@
     <ClCompile Include="Engine\AnnoyingProgram.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Engine\ExternalProcessHandler.cpp" />
+    <ClCompile Include="Events\FinalEvent.cpp" />
     <ClCompile Include="Events\FirstEvent.cpp" />
     <ClCompile Include="Events\SecondEvent.cpp" />
     <ClCompile Include="Events\ThirdEvent.cpp" />
@@ -186,6 +190,7 @@
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="Engine\ExternalProcessHandler.h" />
     <ClInclude Include="Events\EventCommonIncludes.h" />
+    <ClInclude Include="Events\FinalEvent.h" />
     <ClInclude Include="Events\FirstEvent.h" />
     <ClInclude Include="Events\SecondEvent.h" />
     <ClInclude Include="Events\ThirdEvent.h" />

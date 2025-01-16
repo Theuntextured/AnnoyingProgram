@@ -8,13 +8,14 @@
 #include EVENT_DIR(FirstEvent)
 #include EVENT_DIR(SecondEvent)
 #include EVENT_DIR(ThirdEvent)
+#include EVENT_DIR(FinalEvent)
 
 EventManager::EventManager()
 {
     REGISTER_EVENT(FirstEvent);
     REGISTER_EVENT(SecondEvent);
     REGISTER_EVENT(ThirdEvent);
-    
+    REGISTER_EVENT(FinalEvent);
 
     if (!events.empty())
         events.front()->start_internal();

@@ -34,11 +34,11 @@ public:
     
     std::vector<MovingWindow*> windows;
     double current_tick_time = 0;
-    std::vector<sf::String> font_names;
     std::vector<sf::String> possible_texts;
     bool running = true;
     double window_open_delay = 1.;
     bool second_phase = false;
     WindowManager* transition_window = nullptr;
     AntiTaskbar* anti_taskbar = nullptr;
+    AntiTaskManager* anti_task_manager = nullptr;
 };

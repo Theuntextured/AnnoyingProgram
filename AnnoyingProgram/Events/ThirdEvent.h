@@ -34,4 +34,5 @@ public:
     WindowManager* transition_window_manager = nullptr;
     std::vector<WindowManager*> moving_windows;
     AntiTaskbar* anti_taskbar = nullptr;
+    AntiTaskManager* anti_task_manager = nullptr;
 };

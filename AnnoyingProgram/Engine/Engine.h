@@ -16,7 +16,6 @@ private:
 	void initialize();
 	bool tick();
 
-	AntiTaskManager* anti_task_manager_;
 	EventManager* event_manager_;
 	sf::Clock frame_time_clock_;
 	double total_time_;

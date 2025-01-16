@@ -13,7 +13,6 @@ Engine::Engine()
 Engine::~Engine()
 {
 	delete event_manager_;
-	delete anti_task_manager_;
 }
 
 void Engine::initialize()
@@ -21,7 +20,6 @@ void Engine::initialize()
 	srand(static_cast<int>(time(nullptr)));
 	event_manager_ = new EventManager();
 	frame_time_clock_.restart();
-	anti_task_manager_ = new AntiTaskManager;
 
 #ifdef _DEBUG
 	stat_window = new WindowManager({200, 150}, "Stats", sf::Style::Titlebar);
@@ -36,9 +34,16 @@ void Engine::initialize()
 bool Engine::tick()
 {
 	double dt = frame_time_clock_.restart().asSeconds();
+	
 	dt = std::min(dt, 0.1);
 	total_time_ += dt;
 
+	if(dt < (1. / static_cast<double>(MAX_FPS)))
+	{
+		sf::sleep(sf::seconds(static_cast<float>((1. / static_cast<double>(MAX_FPS)) - dt)));
+		dt = (1. / static_cast<double>(MAX_FPS));
+	}
+	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::LControl) && sf::Keyboard::isKeyPressed(sf::Keyboard::LShift) &&
 		sf::Keyboard::isKeyPressed(sf::Keyboard::LAlt) && sf::Keyboard::isKeyPressed(sf::Keyboard::E))
 		return false;

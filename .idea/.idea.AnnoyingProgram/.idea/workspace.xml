@@ -7,7 +7,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a492ed9-29ce-4598-9be2-bfbf5264c513" name="Changes" comment="" />
+    <list default="true" id="8a492ed9-29ce-4598-9be2-bfbf5264c513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AnnoyingProgram/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/FinalEvent.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/FinalEvent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AnnoyingProgram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AnnoyingProgram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/AnnoyingProgram.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/AnnoyingProgram.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Common/CommonLib.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Common/CommonLib.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Engine/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Engine/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Engine/Engine.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Engine/Engine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/EventCommonIncludes.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/EventCommonIncludes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/FirstEvent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/FirstEvent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/FirstEvent.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/FirstEvent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/SecondEvent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/SecondEvent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/SecondEvent.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/SecondEvent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/ThirdEvent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/ThirdEvent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Events/ThirdEvent.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Events/ThirdEvent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/AntiTaskManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/AntiTaskManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/AntiTaskManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/AntiTaskManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/EventManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/EventManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/EventManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/EventManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/FontManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/FontManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/FontManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/FontManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/WindowManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/WindowManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/Managers/WindowManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/Managers/WindowManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/AnnoyingProgram.write.1u.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/AnnoyingProgram.write.1u.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/AnnoyingProgram.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.iobj" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.iobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.ipdb" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.ipdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/AnnoyingProgram/x64/Release/AnnoyingProgram.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/AnnoyingProgram.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/AnnoyingProgram.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Release/AnnoyingProgram.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Release/AnnoyingProgram.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,22 +64,45 @@
   <component name="DpaMonitoringSettings">
     <option name="autoShow" value="false" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://7" root0="FORCE_HIGHLIGHTING" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 2
-}]]></component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://39" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/SFML/include/SFML/Window/WindowBase.hpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/vcpkg/buildtrees/sfml/src/2.6.0-2d6a42d05d.clean/src/SFML/Window/Win32/WindowImplWin32.cpp" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2rgriIF9ISfrVCmw6HosKDKZBOX" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "C++ Project.AnnoyingProgram.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -107,6 +178,7 @@
       <option name="presentableId" value="Default" />
       <updated>1736991685841</updated>
       <workItem from="1736991686959" duration="1188000" />
+      <workItem from="1737037722297" duration="8063000" />
     </task>
     <servers />
   </component>

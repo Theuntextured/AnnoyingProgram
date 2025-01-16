@@ -17,4 +17,5 @@ public:
     
     double total_time = 0;
     bool should_stop = false;
+
 };

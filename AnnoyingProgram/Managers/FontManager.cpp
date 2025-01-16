@@ -25,3 +25,8 @@ const sf::Font& FontManager::get_fallback_font()
 {
     return get_font_by_name("Arial", false);
 }
+
+const sf::Font& FontManager::get_random_font()
+{
+    return get_font_by_name(instance_.font_names_[rand() % instance_.font_names_.size()], true);
+}
